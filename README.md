@@ -40,10 +40,11 @@ In Burp, click Extensions → Add and select "Java" as the extension type. Click
 - Under the issues reported section, select the "Select individual issues" radio button and disable all issues
 - Search for "Bcheck" and enable only "BCheck generated issue"
 - Click Save and then click "Scan" to start the scan
-- Once the scan completes, click the logger tab and locate the request containing the header `THIS_IS_THE_TEST_REQUEST`
+- Once the scan completes, observe that the scan completes without finding any vulnerabilities
+- Click the logger tab and locate the request containing the header `THIS_IS_THE_TEST_REQUEST`
 - Right click on it and send it to the repeater
-- Send the reqeust again and observe that triggers a command injection in the python application
-
+- Send the reqeust again and observe that triggers a command injection in the python application indicating that the
+insertion provider did successfully create a payload that would cause the vulnerability.
 ```
 192.168.122.1 - - [22/Jan/2025 15:14:28] "POST /case_encode HTTP/1.1" 200 -
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current

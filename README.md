@@ -4,8 +4,8 @@ if a vulnerability is discovered.
 
 ### The testcase is comprised of the following:
 - A simple java extension called `BurpInjector.java` which returns 1 insertion point
-- tasecase-92.py which is a python application that contains 1 command injection ( runs on linux )
-- A bcheck that tests for one command injection type using a collaborator server to validate the result
+- `tasecase-92.py` which is a python application that contains 1 command injection ( runs on linux )
+- `test.bcheck` which is a BCheck that tests for one command injection type using a collaborator server to validate the result
 
 ### Observations:
 - This issue is not specific to BChecks or collaborator verified payloads
@@ -15,7 +15,7 @@ if a vulnerability is discovered.
 
 - Run BurpSuite and create a new temporary project in memory
 - Run the test application using `python3 testcase-92.py`
-- In Burp, Click Target -> Scope -> Add and add `http://localhost:4444` to the project scope
+- In Burp, Click Target → Scope → Add and add `http://localhost:4444` to the project scope
 - Run the test curl commands below to send both test requests through the proxy:
 
 ```

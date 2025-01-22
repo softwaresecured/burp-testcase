@@ -32,6 +32,10 @@ public class BurpInjector implements BurpExtension, AuditInsertionPointProvider 
 
     @Override
     public List<AuditInsertionPoint> provideInsertionPoints(HttpRequestResponse httpRequestResponse) {
+        /*
+            Provide an insertion point provider for the "case_encode" endpoint which accepts a base64 encoded value with
+            a reversed string inside of it
+         */
         ArrayList<AuditInsertionPoint> insertionPoints = new ArrayList<AuditInsertionPoint>();
         // Check if the request is to /case_encode
         if ( httpRequestResponse.request().url().matches(".*case_encode.*")) {
@@ -67,6 +71,7 @@ public class BurpInjector implements BurpExtension, AuditInsertionPointProvider 
                             StringBuilder payload = new StringBuilder(String.valueOf(byteArray)).reverse();
                             String body = String.format("arg1=%s", encodePayload(payload.toString()));
                             api.logging().raiseDebugEvent(String.format("buildHttpRequestWithPayload called for payload [%s]", new String(String.valueOf(byteArray))));
+                            // Return the rebuilt request with a "TESTREQUEST" header so it is easy to locate in a scan report
                             return httpRequestResponse.request().withBody(body).withAddedHeader("TESTREQUEST","THIS_IS_THE_TEST_REQUEST");
                         }
 

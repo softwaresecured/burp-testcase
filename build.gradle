@@ -1,0 +1,44 @@
+plugins {
+    id "java"
+}
+
+group "com.softwaresecured.testcase-92"
+
+version "0.1.1"
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "src"
+        }
+        resources {
+            srcDir "resources"
+        }
+    }
+    test {
+        java {
+            srcDir "test"
+        }
+    }
+}
+
+dependencies {
+    def montoyaApi = "net.portswigger.burp.extensions:montoya-api:2024.12"
+    compileOnly montoyaApi
+    testImplementation montoyaApi
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

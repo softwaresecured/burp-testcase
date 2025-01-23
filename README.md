@@ -27,7 +27,7 @@ curl -x localhost:8080 -X POST http://localhost:4444/case_encode -d 'arg1=%59%47
 - Download the extension from the releases tab https://github.com/softwaresecured/burp-testcase/releases/tag/demo
 - In Burp, click Extensions → Add and select "Java" as the extension type. Click "Select file" and select `testcase-92-0.1.1.jar`
 
-# BChecks demo
+# BCheck demo
 A BCheck is used to speed up the scan and only test for one issue but a full scan can be used if preferred.
 ### Configure the BCheck:
 - Click Extensions → BChecks and highlight all the BChecks. Disable all of them since we'll only be using one for the scan

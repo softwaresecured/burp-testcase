@@ -36,7 +36,7 @@ A BCheck is used to speed up the scan and only test for one issue but a full sca
 - Click save
 
 ### Run the scans
-- Click the proxy tab and right click the reqeust to `/case_encode` and click "Scan"
+- Click the proxy tab and right-click the reqeust to `/case_encode` and click "Scan"
 - Click "Scan configuration" and click "New" to create a new scan profile
 - Under the issues reported section, select the "Select individual issues" radio button and disable all issues
 - Search for "BCheck" and enable only "BCheck generated issue"
@@ -52,5 +52,5 @@ insertion provider did successfully create a payload that would cause the vulner
                                  Dload  Upload   Total   Spent    Left  Speed
 100   205  100   205    0     0     13      0  0:00:15  0:00:15 --:--:--    44
 ```
-- Switch back to the Proxy tab and right click on the request to `case_noencode` and select "Add to task x" to repeat the scan against the new endpoint with the same configuration
+- Switch back to the Proxy tab and right-click on the request to `case_noencode` and select "Add to task x" to repeat the scan against the new endpoint with the same configuration
 - Observe that the command injection is found in the case where an AuditInsertionPoint is not used

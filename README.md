@@ -3,8 +3,8 @@ This testcase demonstrates that `AuditInsertionPoint` objects provided to the sc
 if a vulnerability is discovered.
 
 ### The testcase is comprised of the following:
-- A simple java extension called `BurpInjector.java` which returns 1 insertion point
-- `tasecase-92.py` which is a python application that contains 1 command injection ( runs on linux )
+- A simple java extension called `BurpInjector.java` which returns 1 insertion point for `arg1` on the `/case_encode` endpoint which requires a specific type of encoding ( base64/reversed )
+- `tasecase-92.py` which is a python application that contains 2 command injections ( runs on linux )
 - `test.bcheck` which is a BCheck that tests for one command injection type using a collaborator server to validate the result
 
 ### Description of the "tasecase-92.py" test application
@@ -45,7 +45,7 @@ A BCheck is used to speed up the scan and only test for one issue but a full sca
 - Click save
 
 ### Run the scans
-- Click the proxy tab and right-click the reqeust to `/case_encode` and click "Scan"
+- Click the proxy tab and right-click the request to `/case_encode` and click "Scan"
 - Click "Scan configuration" and click "New" to create a new scan profile
 - Under the issues reported section, select the "Select individual issues" radio button and disable all issues
 - Search for "BCheck" and enable only "BCheck generated issue"

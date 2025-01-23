@@ -1,0 +1,20 @@
+metadata:
+    language: v2-beta
+    name: "Testcase 92 bcheck ( id command variant )"
+    description: "Tests for shell command injection using the linux id command"
+    author: "fitz"
+
+define:
+    test_command = `id`
+
+given insertion point then
+    send payload:
+            replacing: {test_command}
+
+        if {latest.response.body} matches "\w+=\d+\(\w+\)" then
+            report issue:
+                severity: high
+                confidence: tentative
+                detail: "Potential command injection found via id command"
+                remediation: "Manual investigation is advised."
+        end if

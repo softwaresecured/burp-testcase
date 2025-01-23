@@ -8,7 +8,7 @@ if a vulnerability is discovered.
 - `test.bcheck` which is a BCheck that tests for one command injection type using a collaborator server to validate the result
 
 ### Description of the "tasecase-92.py" test application
-- The application has two endpoints, `/case_noencode` and `/case_encode`. 
+- The application has two endpoints, `/case_noencode` and `/case_encode`
 - Both endpoints have a parameter called `arg1` that is vulnerable to command injection
 - The `/case_noencode` endpoint can be scanned with BurpSuite and a vulnerability will be detected using a normal scan without an extension.
 - The `/case_encode` endpoint requires that the parameter be a reversed string that is base64'd. This requires an `AuditInsertionPoint` to tell
@@ -62,4 +62,4 @@ insertion provider did successfully create a payload that would cause the vulner
 100   205  100   205    0     0     13      0  0:00:15  0:00:15 --:--:--    44
 ```
 - Switch back to the Proxy tab and right-click on the request to `case_noencode` and select "Add to task x" to repeat the scan against the new endpoint with the same configuration
-- Observe that the command injection is found in the case where an AuditInsertionPoint is not used
+- Observe that the command injection is found in the case where an `AuditInsertionPoint` is not used

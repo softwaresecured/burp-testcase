@@ -61,5 +61,5 @@ insertion provider did successfully create a payload that would cause the vulner
                                  Dload  Upload   Total   Spent    Left  Speed
 100   205  100   205    0     0     13      0  0:00:15  0:00:15 --:--:--    44
 ```
-- Switch back to the Proxy tab and right-click on the request to `case_noencode` and select "Add to task x" to repeat the scan against the new endpoint with the same configuration
+- Switch back to the Proxy tab and right-click on the request to `/case_noencode` and select "Add to task x" to repeat the scan against the new endpoint with the same configuration
 - Observe that the command injection is found in the case where an `AuditInsertionPoint` is not used

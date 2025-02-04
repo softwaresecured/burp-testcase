@@ -31,7 +31,7 @@ scanner how to prepare a payload.
 
 ```
 curl -x localhost:8080 -X POST http://localhost:4444/case_noencode -d 'arg1=hostname' -H 'Content-Type: application/x-www-form-urlencoded'
-curl -x localhost:8080 -X POST http://localhost:4444/case_encode -d 'arg1=%59%47%46%6a%4c%6a%45%74%63%33%4d%75%62%44%5a%33%61%54%46%6c%4f%48%46%6f%61%33%46%35%64%6a%4e%69%61%6a%56%6b%5a%54%64%70%4e%6e%6c%6c%61%57%6c%6a%64%47%5a%6d%5a%7a%51%77%4e%69%42%73%63%6e%56%6a%59%41%3d%3d' -H 'Content-Type: application/x-www-form-urlencoded'
+curl -x localhost:8080 -X POST http://localhost:4444/case_encode -d 'arg1=%5a%57%31%68%62%6e%52%7a%62%32%67%3d' -H 'Content-Type: application/x-www-form-urlencoded'
 ```
 - Observe that in both cases the hostname is shown in the HTTP response ( because the `hostname` command was run ).
 
